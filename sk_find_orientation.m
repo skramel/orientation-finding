@@ -8,12 +8,14 @@ clear;close all;restoredefaultpath;
 %           .cpv files from all cameras (4 cameras as of now)
 %           .gdf file contains tracked 3d positions of particles (see read2_gdf.m and write2_gdf.m)
 %   .gdf file format
-%   1           2:4     5       6:17        18              19
-%   [trackID]   [x,y,x] [time]  [cam2d(x,y)][raymismatch]   [0/1 interpolated]
+%   1           2:4     5       6:17                   18              19
+%   [trackID]   [x,y,x] [time]  [cam2d(x,y), posinfile][raymismatch]   [0/1 interpolated]
 %
+% Output: data_opt.mat
+%   containing the same information as input, but also euler angles
+%   (inserted [5:7]) and error estimates for orientation finding accuracy
 %
-%
-%
+
 % define some paths
 datapath = '';
 calipath = '';
